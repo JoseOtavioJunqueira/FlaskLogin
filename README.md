@@ -1,6 +1,6 @@
 # TaskMaster
 Este projeto é um site de gerenciamento de tarefas onde os usuários podem marcar os afazeres do dia e verificar o que já foi feito. O site possui uma página inicial, uma página de login e uma página principal onde as tarefas são gerenciadas.
-Foi feito com objetivo de demonstrar habilidades em Flask, utilizando banco de dados encriptado e passagem de parâmetros entre Back-End e Front-End.
+Foi feito com objetivo de demonstrar habilidades em Flask, utilizando banco de dados criptografado e passagem de parâmetros entre Back-End e Front-End.
 
 ## Funcionalidades
 - **Página Inicial**: Feita com HTML e CSS.
