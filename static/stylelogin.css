@@ -10,8 +10,8 @@
 }
 
 body {
-    background-color: #c9d6ff;
-    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    background-image: url('bg.jpg');
+    backface-visibility: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,7 +22,7 @@ body {
 .container {
     background-color: white;
     border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.45);
     position: relative;
     overflow: hidden;
     width: 768px;
@@ -51,7 +51,7 @@ body {
 }
 
 .container button {
-    background-color: #512da8;
+    background-color: #402382;
     color: white;
     font-size: 12px;
     padding: 10px 45px;
@@ -152,6 +152,7 @@ body {
     margin: 0 3px;
     width: 40px;
     height: 40px;
+    transition: all 0.3s ease;
 }
 
 .toggle-container {
@@ -168,13 +169,13 @@ body {
 
 .container.active .toggle-container {
     transform: translateX(-100%);
-    border-radius: 0 150px 100 0;
+    border-radius: 0 150px 100px 0;
 }
 
 .toggle {
-    background-color: #512da8;
+    background-color: #402382;
     height: 100%;
-    background: linear-gradient(to right, #5c6bc0, #512da8);
+    background: linear-gradient(to bottom, #5c6bc0, #402382);
     color: white;
     position: relative;
     left: -100%;
@@ -252,7 +253,7 @@ body {
 
 .inputBox input[type="submit"] {
   padding: 10px;
-  background: #512da8;
+  background: #402382;
   color: white;
   font-weight: 600;
   font-size: 1.35em;
@@ -262,4 +263,9 @@ body {
 
 input[type="submit"]:active {
   opacity: 0.6;
+}
+
+.socials a:hover {
+    background-color: #402382;
+    color: white;
 }

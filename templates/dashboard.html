@@ -1,58 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>Dashboard</title>
-    <style>
-        #message {
-            font-size: 20px;
-            color: green;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styledash.css">
+    <link rel="shortcut icon" href="../static/favicondash.png" type="image/x-icon">
+    <title>TaskMaster</title>
 </head>
 <body>
-    <h1>Bem-vindo ao Dashboard!</h1>
-    <video id="camera" width="100%" height="500" autoplay></video>
-    <div id="message"></div>
+    <div class="app">
+        <h1>TaskMaster</h1>
+        <a href="{{ url_for('logout') }}">Log Out</a>
+        <input type="text" class="todo-input" placeholder="Escreva alguma tarefa">
+        <div class="todos">
+            <div class="uncompleted-todos">
+                {% for task in tasks if not task.completed %}
+                    <div class="todo-item" data-id="{{ task.id }}">
+                        <span>
+                            <input type="checkbox" onclick="markAsCompleted('{{ task.id }}')">
+                            {{ task.task }}
+                        </span>
+                        <a href="#" onclick="removeTodo('{{ task.id }}')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M18 6l-12 12" />
+                                <path d="M6 6l12 12" />
+                            </svg>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="completed-todos">
+                {% for task in tasks if task.completed %}
+                    <div class="todo-item" data-id="{{ task.id }}">
+                        <span>
+                            <input type="checkbox" checked onclick="markAsUncompleted('{{ task.id }}')">
+                            {{ task.task }}
+                        </span>
+                        <a href="#" onclick="removeTodo('{{ task.id }}')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M18 6l-12 12" />
+                                <path d="M6 6l12 12" />
+                            </svg>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>  
+    </div>
 
-    <script src="https://unpkg.com/@zxing/library@latest"></script>
-    <script>
-        async function startCamera() {
-            const video = document.getElementById('camera');
-            const codeReader = new ZXing.BrowserMultiFormatReader();
-
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
-                video.srcObject = stream;
-
-                codeReader.decodeFromVideoDevice(null, 'camera', async (result, error) => {
-                    if (result) {
-                        console.log('Código detectado:', result.text);
-                        document.getElementById('message').innerText = `Código detectado: ${result.text}`;
-                        
-                        // Enviar o código para o servidor
-                        try {
-                            await fetch('/save_code', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                },
-                                body: JSON.stringify({ code: result.text }),
-                            });
-                        } catch (err) {
-                            console.error('Erro ao enviar código para o servidor:', err);
-                        }
-                    }
-                    if (error) {
-                        console.error('Erro na leitura do código:', error);
-                    }
-                });
-            } catch (err) {
-                console.error('Erro ao acessar a câmera:', err);
-                document.getElementById('message').innerText = 'Erro ao acessar a câmera: ' + err.message;
-            }
-        }
-
-        startCamera();
-    </script>
+    <script src="../static/scriptdash.js"></script>
 </body>
 </html>

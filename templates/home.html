@@ -5,34 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <link rel="stylesheet" href="../static/stylehome.css">
+    <link rel="shortcut icon" href="../static/favicondash.png" type="image/x-icon">
+    <title>TaskMaster Welcome</title>
 </head>
 
 <body>
     <header>
-        <h3>Organize-se.</h3>
-        <nav class="nav-links">
-            <a href="#" class="nav-link">Nome</a>
-            <a href="#" class="nav-link">Organização</a>
-            <a href="#" class="nav-link">Começe</a>
-        </nav>
-        <button class="btn">Log In</button>
+        <div class="header">
+            <div class="name">
+                <h1>TaskMaster.</h1>
+            </div>
+            <nav class="links">
+                <ul>
+                    <li><a href="#taskmaster">TaskMaster</a></li>
+                    <li><a href="#resumo">Resumo</a></li>
+                </ul>
+            </nav>
+            <a href="{{ url_for('auth') }}" target="_blank"><button class="btn">Começe Agora</button></a>
+        </div>
     </header>
     <main>
-        <section id="empresa" class="container">
-            <div class="content"></div>
-
+        <section id="taskmaster" class="conteiner">
+            <article class="content">
+                <h4>Organize-se conosco</h4>
+                <h1><span class="nome">TaskMaster</span>, o seu site de organização</h1> 
+                <br>
+                <p>site desenvolvido para te ajudar a manter sua rotina e auxiliar seu dia-a-dia.</p>
+                <a href="#resumo"><button class="btn">Saber mais</button></a>
+            </article>
+            <img src="../static/site.jpg" alt="Foto do Site">
         </section>
-    </main>
 
-
-
-
-
-    <h1>Login Authentication System in Flask.</h1>
-    <a href="{{ url_for('login') }}">Login Page</a><br>
-    <a href="{{ url_for('register') }}">Register Page</a><br>
-
+        <section id="resumo" class="conteiner">
+        <h2 class="page-title">RESUMO</h2>
+        <div class="sobre">
+            <h4>TaskMaster</h4>
+            <p>Site dedicado e especializado pensando no seu bem estar, projetado para te auxiliar nas tarefas diárias e para manter a rotina, lembrando-se de seus afazeres e metas para o dia.
+            </p>
+            <a target="_blank" href="{{ url_for('auth') }}">Faça login agora &#x27A1;</a>
+        </div>
+        </section>
+        </main> 
 </body>
 
 </html>
