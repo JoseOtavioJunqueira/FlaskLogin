@@ -8,13 +8,14 @@ Este projeto é um site de gerenciamento de tarefas onde os usuários podem marc
 
 ## Tecnologias Utilizadas
 - **Frontend**: HTML, CSS, JavaScript
-- **Backend: Flask (Python)
+- **Backend**: Flask (Python)
 - **Banco de Dados**: SQLite com criptografia usando Flask-Bcrypt
 
 ## Como Rodar o Projeto
 1. Clone o repositório:
-
+```bash
 git clone https://github.com/seu-usuario/nome-do-repositorio.git
+```
 
 Navegue até o diretório do projeto:
 
