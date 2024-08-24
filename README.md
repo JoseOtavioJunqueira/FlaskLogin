@@ -15,7 +15,7 @@ Foi feito com objetivo de demonstrar habilidades em Flask, utilizando banco de d
 ## Como Rodar o Projeto
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/FlaskLogin.git
+git clone https://github.com/JoseOtavioJunqueira/FlaskLogin.git
 ```
 
 2. Navegue até o diretório do projeto:
