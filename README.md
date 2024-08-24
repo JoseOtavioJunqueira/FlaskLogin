@@ -14,45 +14,41 @@ Este projeto é um site de gerenciamento de tarefas onde os usuários podem marc
 ## Como Rodar o Projeto
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
+git clone https://github.com/seu-usuario/FlaskLogin.git
 ```
 
-Navegue até o diretório do projeto:
+2. Navegue até o diretório do projeto:
+```bash
+cd FlaskLogin
+```
 
-cd nome-do-repositorio
-
-Crie e ative um ambiente virtual (opcional, mas recomendado):
-
+3.Crie e ative um ambiente virtual (opcional, mas recomendado):
+```bash
 python -m venv venv source venv/bin/activate # No Windows, use venv\Scripts\activate
+```
 
-Instale as dependências:
-
+4. Instale as dependências:
+```bash
 pip install -r requirements.txt
-
-Inicie o servidor Flask:
-
+```
+5. Inicie o servidor Flask:
+```bash
 python app.py
+```
 
-Acesse o site em http://127.0.0.1:5000
+6. Acesse o site em http://127.0.0.1:5000
 
-Estrutura do Projeto
-app.py: Código principal da aplicação Flask.
-templates/: Contém os arquivos HTML para as páginas do site.
-home.html: Página inicial.
-auth.html: Página de login e registro.
-dashboard.html: Página principal de gerenciamento de tarefas.
-static/: Contém os arquivos CSS e JavaScript.
-database.db: Banco de dados SQLite.
-Contribuindo
-Sinta-se à vontade para contribuir com melhorias ou relatar problemas. Para contribuir:
+## Estrutura do Projeto
+- **app.py**: Código principal da aplicação Flask.
+- *templates/**: Contém os arquivos HTML para as páginas do site.
+- **home.html**: Página inicial.
+- **auth.html**: Página de login e registro.
+- **dashboard.html**: Página principal de gerenciamento de tarefas.
+- **static/**: Contém os arquivos CSS e JavaScript.
+- **database.db**: Banco de dados SQLite.
 
-Faça um fork do repositório.
-Crie uma nova branch (git checkout -b minha-branch).
-Faça suas alterações e faça commit (git commit -am 'Adiciona nova funcionalidade').
-Envie para o repositório remoto (git push origin minha-branch).
-Abra um pull request.
-Licença
+## Licença
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
-Contato
-José Otávio - seu-email@example.com
+## Contato
+José Otávio - joseotavio.jr1104@gmail.com
