@@ -41,7 +41,7 @@ python app.py
 
 ## Estrutura do Projeto
 - **app.py**: Código principal da aplicação Flask.
-- *templates/**: Contém os arquivos HTML para as páginas do site.
+- **templates/**: Contém os arquivos HTML para as páginas do site.
 - **home.html**: Página inicial.
 - **auth.html**: Página de login e registro.
 - **dashboard.html**: Página principal de gerenciamento de tarefas.
