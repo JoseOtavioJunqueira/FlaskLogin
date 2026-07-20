@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, url_for, redirect, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
@@ -9,7 +10,7 @@ from flask_bcrypt import Bcrypt
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-app.config['SECRET_KEY'] = 'thisisasecretkey'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', os.urandom(24).hex())
 db = SQLAlchemy(app)
 
 login_manager = LoginManager()
@@ -126,4 +127,4 @@ def logout():
     return redirect(url_for('auth'))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=os.environ.get('FLASK_DEBUG') == '1')
