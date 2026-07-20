@@ -1,55 +1,64 @@
 # TaskMaster
-Este projeto é um site de gerenciamento de tarefas onde os usuários podem marcar os afazeres do dia e verificar o que já foi feito. O site possui uma página inicial, uma página de login e uma página principal onde as tarefas são gerenciadas.
-Foi feito com objetivo de demonstrar habilidades em Flask, utilizando banco de dados criptografado e passagem de parâmetros entre Back-End e Front-End.
 
-## Funcionalidades
-- **Página Inicial**: Feita com HTML e CSS.
-- **Página de Login**: Feita com HTML, CSS e JavaScript, incluindo animações dinâmicas.
-- **Página Principal**: Feita com HTML, CSS e JavaScript, permite adicionar, marcar e remover tarefas.
+A full-stack task management web app where users can register, log in, and manage a personal to-do list — mark tasks as done, undo, or remove them. Built to demonstrate a complete Flask application: authentication, session handling, a relational data model, and a dynamic front end.
 
-## Tecnologias Utilizadas
+## Features
+
+- **Authentication**: registration and login with hashed passwords (Flask-Bcrypt) and session management (Flask-Login).
+- **Task management**: add, complete, un-complete, and delete tasks via an AJAX-driven dashboard (no full page reloads).
+- **Per-user data isolation**: each task is scoped to its owner and enforced server-side on every request.
+
+## Tech Stack
+
+- **Backend**: Flask, Flask-SQLAlchemy, Flask-Login, Flask-WTF, Flask-Bcrypt
+- **Database**: SQLite
 - **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Flask (Python)
-- **Banco de Dados**: SQLite com criptografia usando Flask-Bcrypt
 
-## Como Rodar o Projeto
-1. Clone o repositório:
-```bash
-git clone https://github.com/JoseOtavioJunqueira/FlaskLogin.git
+## Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/JoseOtavioJunqueira/taskmaster-flask.git
+   cd taskmaster-flask
+   ```
+
+2. Create and activate a virtual environment (recommended):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. (Optional) Set a persistent session secret — otherwise a random one is generated on each restart, which invalidates existing sessions:
+   ```bash
+   export SECRET_KEY="your-random-secret-here"
+   ```
+
+5. Run the app:
+   ```bash
+   python app.py
+   ```
+
+6. Open http://127.0.0.1:5000
+
+## Project Structure
+
+```
+app.py                 # Flask app: models, routes, auth logic
+templates/              # Jinja templates (home, auth, dashboard)
+static/                 # CSS and JavaScript
 ```
 
-2. Navegue até o diretório do projeto:
-```bash
-cd FlaskLogin
-```
+The SQLite database is created automatically on first run and is not versioned.
 
-3.Crie e ative um ambiente virtual (opcional, mas recomendado):
-```bash
-python -m venv venv source venv/bin/activate # No Windows, use venv\Scripts\activate
-```
+## License
 
-4. Instale as dependências:
-```bash
-pip install -r requirements.txt
-```
-5. Inicie o servidor Flask:
-```bash
-python app.py
-```
+MIT — see [LICENSE](LICENSE).
 
-6. Acesse o site em http://127.0.0.1:5000
+## Contact
 
-## Estrutura do Projeto
-- **app.py**: Código principal da aplicação Flask.
-- **templates/**: Contém os arquivos HTML para as páginas do site.
-- **home.html**: Página inicial.
-- **auth.html**: Página de login e registro.
-- **dashboard.html**: Página principal de gerenciamento de tarefas.
-- **static/**: Contém os arquivos CSS e JavaScript.
-- **database.db**: Banco de dados SQLite.
-
-## Licença
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
-## Contato
-José Otávio - joseotavio.jr1104@gmail.com
+José Otávio — joseotavio.jr1104@gmail.com
